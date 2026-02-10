@@ -3092,6 +3092,12 @@ class Grapic: # pylint: disable=too-many-public-methods
         self.ctx.lineTo(x2, self.height - y2)
         self.ctx.stroke()
 
+    def putPixel(self, x, y, r, g, b):
+        """A pixel"""
+        n = 256*(256*(256+r) + g) + b
+        self.ctx.fillStyle = self.ctx.strokeStyle = '#' + n.toString(16)[1:]
+        self.ctx.fillRect(x, self.height - y, 1, 1)
+
     def triangle(self, x1, y1, x2, y2, x3, y3):
         """Triangle"""
         self.ctx.beginPath()

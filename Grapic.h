@@ -63,6 +63,9 @@ void circleFill(int x, int y, int radius) {
 void line(int x1, int y1, int x2, int y2) {
     CW("G.line(%d,%d,%d,%d)", x1, y1, x2, y2);
 }
+void put_pixel(int x, int y, int r, int g, int b) {
+    CW("G.putPixel(%d,%d,%d,%d,%d)", x, y, r, g, b);
+}
 void triangle(int x1, int y1, int x2, int y2, int x3, int y3) {
     CW("G.triangle(%d,%d,%d,%d,%d,%d)", x1, y1, x2, y2, x3, y3);
 }
