@@ -3095,8 +3095,10 @@ class Grapic: # pylint: disable=too-many-public-methods
     def putPixel(self, x, y, r, g, b):
         """A pixel"""
         n = 256*(256*(256+r) + g) + b
-        self.ctx.fillStyle = self.ctx.strokeStyle = '#' + n.toString(16)[1:]
+        save_color = self.ctx.fillStyle
+        self.ctx.fillStyle = '#' + n.toString(16)[1:]
         self.ctx.fillRect(x, self.height - y, 1, 1)
+        self.ctx.fillStyle = save_color
 
     def triangle(self, x1, y1, x2, y2, x3, y3):
         """Triangle"""
